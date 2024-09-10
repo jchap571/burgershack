@@ -13,7 +13,7 @@ export class BurgersController extends BaseController{
 
     async getBurgers(request, response, next){
     try {
-        response.send('Yum, burgers controller is working!')
+        // response.send('Yum, burgers controller is working!')
         const burgers = await burgersService.getBurgers()
         response.send(burgers)
     } catch (error) {

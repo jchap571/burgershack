@@ -1,4 +1,4 @@
-import burgershack from "../..";
+
 import { dbContext } from "../db/DbContext";
 
 class BurgersService {
@@ -20,12 +20,12 @@ class BurgersService {
             return console.log('burger not found')
             }
             if (burgerToDelete) {
-                burgerToDelete.deleteOne(burgerId)
-                return console.log('deleted burger')
+            const result = await dbContext.Burgers.deleteOne(burgerToDelete)
+            return console.log('deleted burger')
                 
             }
         } catch (error) {
-            error(error)
+            console.log(error)
         }
         
     }
